@@ -12,7 +12,9 @@ services:
     depends_on:
       - web
     networks:
-      - our_net
+      - overlay
+    links:
+      - web
 
   web:
     image: pjm1024cl/flask-test
@@ -20,8 +22,7 @@ services:
       - 5000:5000
     container_name: web
     networks:
-      - our_net
+      - overlay
 
 networks:
-  our_net:
-    driver: bridge
+  overlay:
