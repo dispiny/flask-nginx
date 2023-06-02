@@ -1,0 +1,33 @@
+
+<!-- index.html -->
+<html>
+<head>
+    <title>이것이 국정원이다!</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleContent() {
+            var content = document.getElementById("letter-content");
+            var photo = document.getElementById("photo");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                photo.style.display = "block";
+            } else {
+                content.style.display = "none";
+                photo.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>이것이 국정원?????</h1>
+    <button onclick="toggleContent()">편지 읽어보기!</button>    
+    <div id="letter-content" class="hidden">
+        <br>
+        <img src="{{ url_for('static', filename='letter.png') }}">
+    </div>
+</body>
+</html>
