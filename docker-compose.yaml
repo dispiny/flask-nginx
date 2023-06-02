@@ -15,7 +15,9 @@ services:
       - u-online
 
   web:
-    image: pjm1024cl/flask-test
+    build:
+      context: ./flask/
+      dockerfile: Dockerfile
     ports:
       - 5000:5000
     container_name: myweb-web
