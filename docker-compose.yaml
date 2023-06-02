@@ -8,21 +8,12 @@ services:
     volumes:
       - ./proxy/nginx.conf:/etc/nginx/nginx.conf
       - ./proxy/cert/:/etc/ssl/
-    container_name: proxy
+    container_name: myweb-proxy
     depends_on:
-      - web
-    networks:
-      - overlay
-    links:
       - web
 
   web:
     image: pjm1024cl/flask-test
     ports:
       - 5000:5000
-    container_name: web
-    networks:
-      - overlay
-
-networks:
-  overlay:
+    container_name: myweb-web
