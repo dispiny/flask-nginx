@@ -12,7 +12,7 @@ services:
     depends_on:
       - web
     networks:
-      - our_new
+      - our_net
 
   web:
     image: pjm1024cl/flask-test
