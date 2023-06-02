@@ -13,14 +13,14 @@ services:
       - web
     networks:
       - our_new
-      
+
   web:
     image: pjm1024cl/flask-test
     ports:
       - 5000:5000
     container_name: web
     networks:
-      - our_new
+      - our_net
 
 networks:
   our_net:
