@@ -11,9 +11,17 @@ services:
     container_name: myweb-proxy
     depends_on:
       - web
+    networks:
+      - u-online
 
   web:
     image: pjm1024cl/flask-test
     ports:
       - 5000:5000
     container_name: myweb-web
+    networks:
+      - u-online
+
+networks:
+  u-online:
+    driver: bridge
