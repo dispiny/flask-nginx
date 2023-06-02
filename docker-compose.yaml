@@ -13,4 +13,6 @@ services:
       - web
   web:
     image: pjm1024cl/flask-test
-    container_name: myweb-web
+    ports:
+      - 5000:5000
+    container_name: web
